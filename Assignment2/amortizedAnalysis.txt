@@ -1,0 +1,7 @@
+Jamie Loebe
+CS 261
+
+1.) The total cost units spent on this entire process is 106 units. O(1)+
+
+
+2.) The total cost units spent on this entire process is 638. O(n).
