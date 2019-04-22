@@ -2,8 +2,8 @@
  * Name: Jamie Loebe
  * Date: April 20th, 2019
  * Assignment 2
- * Description:
- *
+ * Description: Dynamic Array implementation
+ * functions
 *****************************************/
 
 /*  dynamicArray.c: Dynamic Array implementation. */
