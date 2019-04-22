@@ -2,8 +2,7 @@
  * Name: Jamie Loebe
  * Date: April 20th, 2019
  * Assignment 2
- * Description:
- *
+ * Description: Dynamic Array implementation functions.
 *****************************************/
 
 /*  dynamicArray.c: Dynamic Array implementation. */
@@ -179,7 +178,7 @@ TYPE getDynArr(DynArr *v, int pos)
     pre:    pos >= 0 and pos < size of the array
     post:   index pos contains new value, val
 */
-void putDynArr(DynArr *v, int pos, int val)
+void putDynArr(DynArr *v, int pos, TYPE val)
 {
     assert(v!=0);
     assert(pos >= 0);

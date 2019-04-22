@@ -1,14 +1,25 @@
-prog: dynamicArray.o main.o
-	gcc -Wall -std=c99 -c dynamicArray.c main.c
+all: prog testda
 
-dynArray.o: dynamicArray.c
-	gcc -Wall -std=c99 -c dynamicArray.c
+prog: dynamicArray.o stackapp.o
+	gcc -g -Wall -std=c99 -o prog dynamicArray.o stackapp.o -lm
 
-main.o: main.c
-	gcc -Wall -std=c99 -c main.c
+testda: dynamicArray.o testDynArray.o
+	gcc -g -Wall -std=c99 -o testda dynamicArray.o testDynArray.o
 
-prog: dynamicArray.o main.o
-	gcc -Wall -std=c99 -o Assignment2 dynamicArray.o main.o
+stackapp.o: stackapp.c dynArray.h
+	gcc -g -Wall -std=c99 -c stackapp.c
 
-clean: 
-	rm dynamicArray.o main.o;
+testDynArray.o: testDynArray.c dynArray.h
+	gcc -g -Wall -std=c99 -c testDynArray.c
+
+dynamicArray.o: dynamicArray.c dynArray.h 
+	gcc -g -Wall -std=c99 -c dynamicArray.c 
+        
+clean:
+	rm dynamicArray.o
+	rm stackapp.o
+	rm testDynArray.o
+	rm stackapp
+	rm testda
+
+
