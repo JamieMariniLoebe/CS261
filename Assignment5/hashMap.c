@@ -357,15 +357,14 @@ void hashMapPrint(HashMap* map)
     int i;
     for(i = 0 ; i < map->capacity ; i++)
     {
-        if(map->table[i] != NULL)
+        printf("\n Bucket[%d] => ", i);
+        HashLink *temp = map->table[i];
+        while (temp != NULL)
         {
-            HashLink *temp = map->table[i];
-            while(temp != NULL)
-            {
-                printf("Key: %s, Value: %d\n",temp->key,temp->value);
-                temp = temp->next;
-            }
+            printf("(%s,%d) -> ", temp->key, temp->value);
+            temp = temp->next;
         }
     }
+
 }
 

@@ -84,14 +84,12 @@ int main(int argc, const char** argv)
     
     for (int i = 0; i < hashMapCapac; i++)
     {
-        HashLink *current = map->table[i];
-        if (current != NULL)
+        printf("\nBucket[%d] => ", i);
+        HashLink *temp = map->table[i];
+        while (temp != NULL)
         {
-            while (current)
-            {
-                printf("%s: %d \n", current->key, current->value);
-                current = current->next;
-            }
+            printf("(%s,%d) -> ", temp->key, temp->value);
+            temp = temp->next;
         }
     }
     
